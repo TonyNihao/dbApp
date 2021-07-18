@@ -36,10 +36,10 @@ def index():
             count = int(request.form.get('auto_count'))
             for _ in range(count):
                 sentance = create_sentance(words_list)
-                print(sentance)
                 think = 'You really think that i was create dynamically refreshed page. Oh, sorry =)'
                 if db_name and db_host and db_user and db_pass:
                     query = "INSERT INTO sentances (sen) VALUES('{0}')".format(sentance)
+                    print(query)
                     cursor.execute(query)
                 else:
                     raise 'DBError: error with connection to the database'
