@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>DB Application</title>
+
+</head>
+<body>
+    <h1>Hello, fucking world!</h1>
+    <p> This application generate random phrase from your words! </p>
+    <p> Enjoy it! =) </p>
+    <form method="POST">
+
+        <p>Enter random words splited by coma here    <input type='text' name='words_list' required></p>
+        <p>Do you want auto generate every 3 seconds <input type="number" name='auto_count'value="10"> times? <input type="checkbox" name='autogenerate' value='autogenerate'></p>
+        <p><input type="submit" value="Send"></p> 
+        {{sentance}}
+        {% if think %}
+        <h1 style='color:red;'>{{think}}</h1>
+        {% endif %}
+    </form>
+</body>
+</html>
