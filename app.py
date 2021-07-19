@@ -3,6 +3,7 @@ import os
 import random
 import psycopg2
 from psycopg2 import sql
+from time import sleep
 
 app = Flask(__name__)
 
@@ -43,6 +44,7 @@ def index():
                         conn.autocommit=True
                         query = sql.SQL("INSERT INTO sentances (sen) VALUES('{0}')".format(sentance))
                         cursor.execute(query)
+                        sleep(3)
                 else:
                     raise 'DBError: error with connection to the database'
         else:
