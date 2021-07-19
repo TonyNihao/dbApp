@@ -38,7 +38,7 @@ def index():
                 sentance = create_sentance(words_list)
                 think = 'You really think that i was create dynamically refreshed page. Oh, sorry =)'
                 if db_name and db_host and db_user and db_pass:
-                    query = "INSERT INTO sentances (sen) VALUES({0})".format(sentance)
+                    query = "INSERT INTO sentances (sen) VALUES('{0}')".format(sentance)
                     print(query)
                     cursor.execute(query)
                 else:
