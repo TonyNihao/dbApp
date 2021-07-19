@@ -19,7 +19,7 @@ conn = psycopg2.connect(dbname=db_name,
                         user=db_user, 
                         password=db_pass)
 
-cursor = conn.cursor()
+# cursor = conn.cursor()
 
 def create_sentance(words_list):
     words_list = words_list.split(',')
@@ -39,7 +39,7 @@ def index():
                 sentance = create_sentance(words_list)
                 think = 'You really think that i was create dynamically refreshed page. Oh, sorry =)'
                 if db_name and db_host and db_user and db_pass:
-                    with cursor:
+                    with conn.cursor() as cursor:
                         conn.autocommit=True
                         query = sql.SQL("INSERT INTO sentances (sen) VALUES('{0}')".format(sentance))
                         cursor.execute(query)
